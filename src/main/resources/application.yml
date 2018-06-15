@@ -1,0 +1,14 @@
+gitHub.url: https://www.github.com
+
+organizationName: societe-generale
+
+publishExcludedRepositories: false
+
+crawlAllBranches: false
+
+output:
+  file:
+   filenamePrefix: "SG_repos_"
+
+
+
