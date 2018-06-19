@@ -8,6 +8,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
 
+import static java.lang.System.exit;
+
 @EnableGitHubCrawler
 @SpringBootApplication
 @Configuration
@@ -24,6 +26,8 @@ public class PersonalGitHubCrawlerApplication implements CommandLineRunner {
     @Override
     public void run(String... strings) throws Exception {
         crawler.crawl();
+
+        exit(0);
     }
 
 }

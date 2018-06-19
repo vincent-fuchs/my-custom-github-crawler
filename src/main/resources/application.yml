@@ -1,4 +1,7 @@
-gitHub.url: https://my.github-enterprise-instance
+gitHub.url: https://api.github.com
+
+# or if you're using GitHub Enterprise
+# gitHub.url: https://your-GHE-instance/api/v3
 
 organizationName: societe-generale
 
@@ -8,7 +11,6 @@ crawlAllBranches: false
 
 output:
   file:
-   filenamePrefix: "SG_repos_"
-
+    filenamePrefix: "SG_repos"
 
 
