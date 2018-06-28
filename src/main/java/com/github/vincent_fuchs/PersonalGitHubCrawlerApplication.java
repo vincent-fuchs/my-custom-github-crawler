@@ -1,16 +1,16 @@
 package com.github.vincent_fuchs;
 
-import com.societegenerale.githubcrawler.EnableGitHubCrawler;
+import com.github.vincent_fuchs.output.CustomOutput;
 import com.societegenerale.githubcrawler.GitHubCrawler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import static java.lang.System.exit;
 
-@EnableGitHubCrawler
 @SpringBootApplication
 @Configuration
 public class PersonalGitHubCrawlerApplication implements CommandLineRunner {
@@ -28,6 +28,11 @@ public class PersonalGitHubCrawlerApplication implements CommandLineRunner {
         crawler.crawl();
 
         exit(0);
+    }
+
+    @Bean
+    public CustomOutput customOutput(){
+        return new CustomOutput();
     }
 
 }
