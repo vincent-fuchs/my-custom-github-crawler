@@ -18,8 +18,8 @@
 
         <dependency>
             <groupId>com.societegenerale</groupId>
-            <artifactId>github-crawler</artifactId>
-            <version>1.0.1</version>
+            <artifactId>github-crawler-starter</artifactId>
+            <version>1.0.2</version>
         </dependency>
 
         <dependency>
