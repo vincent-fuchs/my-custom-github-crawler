@@ -17,9 +17,9 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.societegenerale</groupId>
+            <groupId>com.societegenerale.github-crawler</groupId>
             <artifactId>github-crawler-starter</artifactId>
-            <version>1.0.2</version>
+            <version>1.0.3</version>
         </dependency>
 
         <dependency>
