@@ -19,7 +19,7 @@
         <dependency>
             <groupId>com.societegenerale.github-crawler</groupId>
             <artifactId>github-crawler-starter</artifactId>
-            <version>1.0.3</version>
+            <version>1.0.8</version>
         </dependency>
 
         <dependency>
