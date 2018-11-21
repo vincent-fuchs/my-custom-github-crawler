@@ -1,17 +1,18 @@
-#repositories matching the configured regexp will be excluded
-repositoriesToExclude:
-  #excluding repos different from github-crawler..
-  - "^(?!github-crawler).*"
+github-crawler:
+  #repositories matching the configured regexp will be excluded
+  repositoriesToExclude:
+    #excluding repos different from github-crawler..
+    - "^(?!github-crawler).*"
 
-indicatorsToFetchByFile:
-#syntax with "[....]" is required to escape the dot in the key name
-  "[pom.xml]":
-      - name: spring_boot_starter_parent_version
-        method: findDependencyVersionInXml
-        params:
-          artifactId: spring-boot-starter-parent
-  ".travis.yml":
-      - name: oracle_jdk_version_for_travis
-        method: findFirstValueWithRegexpCapture
-        params:
-          pattern: "(?s).*oraclejdk([0-9]*).*"
+  indicatorsToFetchByFile:
+  #syntax with "[....]" is required to escape the dot in the key name
+    "[pom.xml]":
+        - name: spring_boot_starter_parent_version
+          type: findDependencyVersionInXml
+          params:
+            artifactId: spring-boot-starter-parent
+    ".travis.yml":
+        - name: oracle_jdk_version_for_travis
+          type: findFirstValueWithRegexpCapture
+          params:
+            pattern: "(?s).*oraclejdk([0-9]*).*"

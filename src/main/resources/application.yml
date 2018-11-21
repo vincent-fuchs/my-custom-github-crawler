@@ -1,16 +1,12 @@
-gitHub.url: https://api.github.com
+github-crawler:
 
-# or if you're using GitHub Enterprise
-# gitHub.url: https://your-GHE-instance/api/v3
+  githubConfig:
+    # or if you're using GitHub Enterprise
+    # apiUrl: https://your-GHE-instance/api/v3
+    apiUrl: https://api.github.com
+    organizationName: societe-generale
+    oauthToken: "MY_TOKEN_abcdef"
 
-organizationName: societe-generale
-
-publishExcludedRepositories: false
-
-crawlAllBranches: false
-
-output:
-  file:
-    filenamePrefix: "SG_repos"
-
-
+  outputs:
+    file:
+      filenamePrefix: "SG_repos"
