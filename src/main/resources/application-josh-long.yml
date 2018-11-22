@@ -1,0 +1,42 @@
+
+github-crawler:
+  githubConfig:
+    # default is false, ie we expect to parse orgs. Set it to true to parse a given user's repo
+    crawl.usersRepo.insteadOf.orgasRepos: true
+    organizationName: joshlong
+
+  outputs:
+    file:
+      filenamePrefix: "joshLong"
+
+  indicatorsToFetchByFile:
+    "[pom.xml]":
+    - name: java_version
+      method: findFirstValueWithRegexpCapture
+      params:
+        pattern: "(?s)(?:<java\\.version>)(1\\.\\d{1,2})(?:<\\/java\\.version>)"
+    - name: spring_boot_starter_version
+      method: findDependencyVersionInXml
+      params:
+        artifactId: spring-boot-starter-parent
+    - name: nb_maven_modules
+      method: countMatchingXmlElements
+      params:
+        xpathToMatch: "//*[local-name()='project']/*[local-name()='modules']/*"
+
+    Dockerfile:
+    - name: is_using_docker
+      method: findFirstValueWithRegexpCapture
+      params:
+        pattern: "FROM (.*)\\s?.*"
+
+    "[.circleci/config.yml]":
+    - name: circleCi_docker_image
+      method: findPropertyValueInYamlFile
+      params:
+        propertyName: "jobs.build.docker.image"
+    - name: mvn_command_in_use
+      method: findFirstValueWithRegexpCapture
+      params:
+        pattern: ".*(?:mvnw|mvn)(.*)"
+
